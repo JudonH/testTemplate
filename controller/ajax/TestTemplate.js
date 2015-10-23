@@ -3,6 +3,14 @@ var express = require('express');
 //路由级中间件
 var router = express.Router();
 
+var data={
+	list:[]
+};
+
+function(req){
+	data.isCache=req.query.isCache;
+	data.
+}
 
 router.get('/testCompile',function(req, res, next){
 
