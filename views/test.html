@@ -819,7 +819,7 @@ var startTest = function () {
     <button id="button-comp" onclick="this.disabled=true;startComp()" style="padding: 5px;">开始测试 > 编译性能</button>
     <button id="button-render" onclick="this.disabled=true;startRender()" style="padding: 5px;">开始测试 > 渲染性能</button>
     <button id="button-test" onclick="this.disabled=true;startTest()" style="padding: 5px;">开始测试 > 编辑+渲染</button>
-    <button style="padding: 5px;">开始测试Node > 编译性能</button>
+    <button style="padding: 5px;" onclick="this.disabled=true;startNodeComplie()">开始测试Node > 编译性能</button>
     <button style="padding: 5px;">开始测试Node > 渲染性能</button>
     <button style="padding: 5px;">开始测试Node > 编辑+渲染</button>
     <span id="log" style="font-size:12px">
@@ -840,4 +840,17 @@ var startTest = function () {
 <div id="con-"></div>
 <div id="con-"></div>
 </body>
+<script type="text/javascript">
+    var startNodeComplie=function(){
+        console.log(1);
+        $.ajax({
+            url:'/ajax/testCompile',
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+            }
+        });
+    };
+</script>
 </html>
